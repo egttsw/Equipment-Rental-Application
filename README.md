@@ -48,9 +48,12 @@ PS! Similar Javascript function is also used for calculating the total price for
 ## Unit tests
 
 I made some simple unit tests to check the routes taken in the controller APIs. I also did tests for the price calculation function.
-I used the NuGet package MS.Test.TestAdapter. The project containing the unit tests is named UnitTestRentalApp and is included in the repository. Simply installing the latest NuGet test package and running all tests should do the trick.
 
-If I had more time or better knowledge I would have implemented integration or end-to-end testing for detecting any problems related to storing data in the SQL databases.
+The project containing the unit tests is in the following repository: https://github.com/egttsw/UnitTestRentalApp
+I used the NuGet package MS.Test.TestAdapter. Simply installing the latest NuGet test package and running all tests should do the trick.
+Right click the Dependancies and Add Project Reference: Equpment-Rental-Application.
+ 
+If I had more time I would have implemented integration or end-to-end testing for detecting any problems related to storing data in the SQL databases. I currently skipped it since I was already past the expected deadline.
 
 
 ## Style
