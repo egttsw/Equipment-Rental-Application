@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Equipment_Rental_Application.Models.Equipment>
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>This is a self-service system for renting out construction equipment.</p>
+    <br />
+    <h3>The following equipment is available for renting:</h3>
+</div>
+<div>
+    <br />
+
+    @if(Model.Count() > 0)
+    {
+        <table class="table table-bordered table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>
+                        Equipment
+                    </th>
+                    <th>
+                        Type
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var item in Model)
+                {
+                    <tr>
+                        <td width="50%">@item.EquipmentName</td>
+                        <td width="50%">@item.EquipmentType</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div>
+            <h3>Rental information</h3>
+            <p>There are three different fees:</p>
+            <ul>
+                <li>One-time rental fee – 100€</li>
+                <li>Premium daily fee – 60€/day</li>
+                <li>Regular daily fee – 40€/day</li>
+            </ul>
+            <p>The price calculation for different types of equipment:</p>
+            <ul>
+                <li>Heavy – rental price is a one-time fee, plus a premium fee for each day rented.</li>
+                <li>Regular – rental price is a one-time fee, plus a premium fee for the first 2 days each, plus a regular fee for the number of days exceeding 2 days.</li>
+                <li>Specialized – rental price is a premium fee for the first 3 days each, plus a regular fee times the number of days exceeding 3 days.</li>
+            </ul>
+</div>
+    }
+    else
+    {
+        <p>No equipment available right now!</p>
+    }
+
+</div>
